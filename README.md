@@ -1,4 +1,4 @@
-workreport
+WorkReport
 ==========
 
-A Symfony project created on October 16, 2015, 3:33 pm.
+Простой task manager, который можно будет интегрировать в Symfony бандлом в качестве баг трекера
