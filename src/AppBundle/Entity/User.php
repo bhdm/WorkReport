@@ -6,18 +6,19 @@ use
     Symfony\Component\Validator\Constraints as Assert,
     Gedmo\Mapping\Annotation as Gedmo;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntityValidator;
 
 
 /**
  * @ORM\Entity()
  * @ORM\Table()
- * @UniqueEntity(fields={email}, message="Такой Email уже зарегистрирован в системе")
+ * @UniqueEntity(fields={"email"}, message="Такой Email уже зарегистрирован в системе")
  */
 class User extends BaseEntity
 {
     /**
      * @ORM\Column(type="string", unique=true)
-     * @Assert\Email(message="такой Email - не существует")
+     * @Assert\NotNull(message="Поле Email обязательно для заполнения")
      */
     protected $email;
 
