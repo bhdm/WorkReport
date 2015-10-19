@@ -26,6 +26,11 @@ class Label extends BaseEntity
     protected $tasks;
 
     /**
+     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\File", mappedBy="labels")
+     */
+    protected $files;
+
+    /**
      * @return mixed
      */
     public function getTitle()

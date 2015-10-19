@@ -35,19 +35,31 @@ class User extends BaseEntity
     protected $password;
 
     /**
-     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Project", mappedBy="owner")
+     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Project", mappedBy="owner")
      */
     protected $projects;
+
+    /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Project", mappedBy="owner")
+     */
+    protected $myProjects;
 
     /**
      * @ORM\OneToMany(targetEntity="AppBundle\Entity\Milestone", mappedBy="owner")
      */
     protected $milestones;
 
+    /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\File", mappedBy="owner")
+     */
+    protected $files;
+
 
     public function __construct(){
         $this->projects = new ArrayCollection();
+        $this->myProjects = new ArrayCollection();
         $this->milestones = new ArrayCollection();
+        $this->files = new ArrayCollection();
     }
 
     /**

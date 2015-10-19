@@ -23,7 +23,7 @@ class Project extends BaseEntity
     protected $title;
 
     /**
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\User", inversedBy="projects")
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\User", inversedBy="myProjects")
      */
     protected $owner;
 
@@ -32,9 +32,16 @@ class Project extends BaseEntity
      */
     protected $milestones;
 
+    /**
+     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\User", inversedBy="projects")
+     */
+    protected $favorites;
+
+
 
     public function __construct(){
         $this->milestones = new ArrayCollection();
+        $this->favorites = new ArrayCollection();
     }
 
 
