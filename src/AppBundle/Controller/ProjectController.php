@@ -12,8 +12,8 @@ class ProjectController extends Controller
      * @Route("/project/list", name="project_list")
      */
     public function listAction(Request $request){
-
-        return [];
+        $projects = $this->getDoctrine()->getRepository('AppBundle:Project')->findBy(['enabled' => true]);
+        return ['projects' => $projects];
     }
 
 
