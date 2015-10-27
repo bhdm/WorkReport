@@ -7,15 +7,15 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
-class ProjectController extends Controller
+class TaskController extends Controller
 {
     /**
-     * @Route("/project/list", name="project_list")
-     * @Template("AppBundle:Project:list.html.twig")
+     * @Route("/project/{id}", name="task_list")
+     * @Template("AppBundle:Task:list.html.twig")
      */
     public function listAction(Request $request){
-        $projects = $this->getDoctrine()->getRepository('AppBundle:Project')->findBy(['enabled' => true]);
-        return ['projects' => $projects];
+//        $projects = $this->getDoctrine()->getRepository('AppBundle:Project')->findBy(['enabled' => true]);
+        return [];
     }
 
 }

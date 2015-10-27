@@ -1,1 +1,26 @@
 {% extends "AppBundle::layout.html.twig" %}
+
+{% block body %}
+
+    {% for a in 1..7 %}
+        <div class="col-lg-3 col-sm-4 col-xs-6 project-thumbnail">
+            <div class="thumbnail">
+                <!-- Аватар проекта -->
+                <img src="{{ asset('bundles/framework/images/logo_symfony.png') }}" class="img-circle img-responsive img-center project-logo">
+
+                <h3>Проект OneDayJob</h3>
+                <p>
+                    Содержит описание для тега. Тег должен быть первым или последним элементом в группе.
+                </p>
+            </div>
+        </div>
+    {% endfor %}
+    <div class="col-lg-3 col-sm-4 col-xs-6 project-thumbnail">
+        <div class="thumbnail text-center">
+            <br />
+            <br />
+            <br />
+            <h3>Добавить новый</h3>
+        </div>
+    </div>
+{% endblock %}

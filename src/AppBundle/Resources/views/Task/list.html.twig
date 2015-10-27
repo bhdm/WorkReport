@@ -1,0 +1,56 @@
+{% extends "AppBundle::layout.html.twig" %}
+
+{% block body %}
+    <!-- left sidebar -->
+    <div class="col-xl-3 col-md-4 col-sm-4 col-xs-12">
+        <h3>
+            Проект OndeDayJob
+        </h3>
+        <img src="{{ asset('bundles/framework/images/logo_symfony.png') }}" class="img-circle">
+    </div>
+    <!-- end left sidebar -->
+
+    <!-- content block -->
+    <div class="col-xl-9 col-md-8 col-sm-8 col-xs-12">
+        <!-- search block -->
+        <form class="form-inline">
+            <label>ПОИСК</label>
+            <select class="form-control hidden-sm">
+                <option>В этом проекте</option>
+                <option>Во всех проектах</option>
+            </select>
+            <input type="text" class="form-control" placeholder="Поиск">
+            <input type="date" class="form-control">
+            <button class="btn btn-primary">Поиск</button>
+        </form>
+        <!-- end search block -->
+
+        <div>
+            {% for i in 1..10 %}
+                <div class="row task">
+                    <div class="col-xs-10">
+                        Пример задачи с большим количество символов в Заголовоке. Этот пример что бы не косячилось
+                    </div>
+                    <div class="col-xs-2">
+                        <div class="dropdown">
+                            <button class="btn btn-default dropdown-toggle" type="button" id="taskMenu{{ i }}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                <span class="glyphicon glyphicon-asterisk"></span>
+                            </button>
+                            <ul class="dropdown-menu pull-right" aria-labelledby="taskMenu{{ i }}">
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something else here</a></li>
+                                <li><a href="#">Separated link</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xs-4"><small>25.03.2015</small></div>
+                    <div class="col-xs-4"><small>bhdm</small></div>
+                    <div class="col-xs-4"><small class="text-warning">В обработке</small></div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    <!-- end content block -->
+
+{% endblock %}
