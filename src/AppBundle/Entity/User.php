@@ -54,12 +54,18 @@ class User extends BaseEntity
      */
     protected $files;
 
+    /**
+     * @ORM\OneToMany(targetEntity="ClientBundle\Entity\Client", mappedBy="owner")
+     */
+    protected $clients;
+
 
     public function __construct(){
         $this->projects = new ArrayCollection();
         $this->myProjects = new ArrayCollection();
         $this->milestones = new ArrayCollection();
         $this->files = new ArrayCollection();
+        $this->clients = new ArrayCollection();
     }
 
     /**
@@ -124,6 +130,70 @@ class User extends BaseEntity
     public function setProjects($projects)
     {
         $this->projects = $projects;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getMyProjects()
+    {
+        return $this->myProjects;
+    }
+
+    /**
+     * @param mixed $myProjects
+     */
+    public function setMyProjects($myProjects)
+    {
+        $this->myProjects = $myProjects;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getMilestones()
+    {
+        return $this->milestones;
+    }
+
+    /**
+     * @param mixed $milestones
+     */
+    public function setMilestones($milestones)
+    {
+        $this->milestones = $milestones;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFiles()
+    {
+        return $this->files;
+    }
+
+    /**
+     * @param mixed $files
+     */
+    public function setFiles($files)
+    {
+        $this->files = $files;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getClients()
+    {
+        return $this->clients;
+    }
+
+    /**
+     * @param mixed $clients
+     */
+    public function setClients($clients)
+    {
+        $this->clients = $clients;
     }
 
 
