@@ -1,19 +1,44 @@
 {% extends "AppBundle::layout.html.twig" %}
 
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('bundles/app/js/jquery.calendar-widget.js') }}"></script>
+    <script>
+        $(document).ready(function(){
+            $("#calendar-widget").calendarWidget({
+                month: 10,
+                year: 2015
+            });
+        });
+
+    </script>
+{% endblock %}
+
 {% block body %}
     <!-- left sidebar -->
-    <div class="col-xl-3 col-md-4 col-sm-4 col-xs-12">
+    <div class="col-lg-2 col-md-4 col-sm-4 col-xs-12">
         <h3>
             Проект OndeDayJob
         </h3>
         <img src="{{ asset('bundles/framework/images/logo_symfony.png') }}" class="img-circle">
+        <hr />
+        <h3>Календарь</h3>
+        <div id="calendar-widget">
+        </div>
+
+        <h3>Фильтры</h3>
+        <ul class="nav">
+            <li>Избранные</li>
+            <li>Не завершенные</li>
+            <li>На этой недели</li>
+        </ul>
     </div>
     <!-- end left sidebar -->
 
     <!-- content block -->
-    <div class="col-xl-9 col-md-8 col-sm-8 col-xs-12">
+    <div class="col-lg-6 col-md-8 col-sm-8 col-xs-12">
         <!-- search block -->
-        <form class="form-inline">
+        <form class="form-inline text-right">
             <label>ПОИСК</label>
             <select class="form-control hidden-sm">
                 <option>В этом проекте</option>
@@ -28,10 +53,28 @@
         <div>
             {% for i in 1..10 %}
                 <div class="row task">
-                    <div class="col-xs-10">
+                    <div class="col-xs-1 text-left">
+                        <span class="glyphicon glyphicon-star-empty"></span>
+                    </div>
+                    <div class="col-xs-9">
                         Пример задачи с большим количество символов в Заголовоке. Этот пример что бы не косячилось
                     </div>
-                    <div class="col-xs-2">
+                    <div class="col-xs-1 text-right">
+                        <div class="dropdown">
+                            <button class="btn btn-default dropdown-toggle" type="button" id="taskStatus{{ i }}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                <span class="glyphicon glyphicon-repeat"></span>
+                            </button>
+                            <ul class="dropdown-menu pull-right" aria-labelledby="taskStatus{{ i }}">
+                                <li><a href="#">Зарегистрирован</a></li>
+                                <li><a href="#">Открыт</a></li>
+                                <li><a href="#">Закрыт</a></li>
+                                <li><a href="#">Открыт снова</a></li>
+                                <li><a href="#">Исправлен</a></li>
+                                <li><a href="#">Проверен</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xs-1 text-right">
                         <div class="dropdown">
                             <button class="btn btn-default dropdown-toggle" type="button" id="taskMenu{{ i }}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                 <span class="glyphicon glyphicon-asterisk"></span>
@@ -44,13 +87,22 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="col-xs-4"><small>25.03.2015</small></div>
-                    <div class="col-xs-4"><small>bhdm</small></div>
+                    <br style="clear: both"/>
+                    <div class="col-xs-2"><span class="glyphicon glyphicon-comment gray"></span>&nbsp;<span class="gray">12</span></div>
+                    <div class="col-xs-3"><small>25.03.2015</small></div>
+                    <div class="col-xs-3"><small>bhdm</small></div>
                     <div class="col-xs-4"><small class="text-warning">В обработке</small></div>
                 </div>
             {% endfor %}
         </div>
     </div>
     <!-- end content block -->
+
+
+    <!-- new task block -->
+    <div class="col-lg-4 hidden-md hidden-sm hidden-xs" >
+        <h3>Новая задача</h3>
+    </div>
+    <!-- end new task block -->
 
 {% endblock %}
