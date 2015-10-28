@@ -17,4 +17,7 @@ $(document).ready(function(){
         timepicker:false,
         format:'d.m.Y'
     });
+
+    $(".table").stupidtable();
 });
+

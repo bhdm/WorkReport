@@ -1,0 +1,63 @@
+{% extends "AppBundle::layout.html.twig" %}
+
+{% block javascripts %}
+    {{ parent() }}
+{% endblock %}
+
+{% block body %}
+    <div class="col-xs-12">
+        <div class="well">
+            <table class="table table-bordered small">
+                <tr>
+                    <th data-sort="string">Компания</th>
+                    <th data-sort="string"  data-sort-default="asc">ФИО</th>
+                    <th data-sort="string">Должность</th>
+                    <th data-sort="string">Статус</th>
+                    <th></th>
+                </tr>
+                {%  for i in 1..10 %}
+                    <tr>
+                        <td><a href="#">ООО Ромашка</a></td>
+
+                        <td>
+                        {% if i == 1 %}
+                            <a href="#">Иванов Петр Сидорович</a>
+                        {% elseif i == 2 %}
+                            <a href="#">Степанов Максим</a>
+                        {% elseif i == 3 %}
+                            <a href="#">Эрман Георгий</a>
+                        {% elseif i == 4 %}
+                            <a href="#">Тулупов Алексей</a>
+                        {% else %}
+                            <a href="#">Непомню Непомню</a>
+                        {% endif %}
+                        </td>
+                        <td>Исполнительный директор</td>
+                        <td>
+                            <span class="label label-warning">
+                                Ожидаем документы
+                            </span>
+                        </td>
+                        <td class="text-right">
+                            <button class="btn btn-sm btn-default" title="Редактировать">
+                                <span class="glyphicon glyphicon-edit"></span>
+                            </button>
+                            &nbsp;
+                            <button class="btn btn-sm btn-default" title="Комментировать">
+                                <span class="glyphicon glyphicon-comment"></span>
+                            </button>
+                            &nbsp;
+                            <button class="btn btn-sm btn-default" title="Отчет">
+                                <span class="glyphicon glyphicon-floppy-disk"></span>
+                            </button>
+                            &nbsp;
+                            <button class="btn btn-sm btn-danger" title="Удалить">
+                                <span class="glyphicon glyphicon-remove"></span>
+                            </button>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+{% endblock %}
