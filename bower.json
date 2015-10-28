@@ -1,0 +1,10 @@
+{
+  "name": "workReport",
+  "version": "0.0.1",
+  "dependencies": {
+    "jquery": "~1.10.2",
+    "bootstrap": "~3.3.5",
+    "datetimepicker": "master"
+  },
+  "private": true
+}

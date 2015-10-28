@@ -1,6 +1,5 @@
 {
   "name": "datetimepicker",
-  "version": "2.4.5",
   "main": [
     "jquery.datetimepicker.js",
     "jquery.datetimepicker.css"
@@ -13,7 +12,9 @@
     "**/*.md",
     "**/*.html",
     "**/*.tpl",
-    "**/jquery.js"
+    "**/jquery.js",
+    "bower_components",
+    "node_modules"
   ],
   "keywords": [
     "calendar",
@@ -34,7 +35,9 @@
     "touch"
   ],
   "dependencies": {
-    "jquery": ">= 1.7.2"
+    "jquery": ">= 1.7.2",
+    "jquery-mousewheel": ">= 3.1.13",
+    "date-functions": "~0.0.1"
   },
   "authors": [
     {
@@ -49,14 +52,13 @@
     "type": "git",
     "url": "git://github.com:xdan/datetimepicker.git"
   },
-  "_release": "2.4.5",
+  "_release": "7e35e32536",
   "_resolution": {
-    "type": "version",
-    "tag": "2.4.5",
-    "commit": "72ff0b43e50e066088303ea8ddb9445b1ec99d1d"
+    "type": "branch",
+    "branch": "master",
+    "commit": "7e35e325363eafe9764228acc6a3d0be473b3aae"
   },
   "_source": "git://github.com/xdan/datetimepicker.git",
-  "_target": "~2.4.5",
-  "_originalSource": "datetimepicker",
-  "_direct": true
+  "_target": "master",
+  "_originalSource": "datetimepicker"
 }
