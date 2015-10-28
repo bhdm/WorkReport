@@ -51,13 +51,50 @@
         <!-- end search block -->
 
         <div>
+            <div class="row task hidden-lg">
+                <div class="col-xs-10">
+                    <div class="task-list-title">
+                        <textarea class="form-control"></textarea>
+                    </div>
+                </div>
+                <div class="col-xs-1 text-right">
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="taskStatusNew" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            <span class="glyphicon glyphicon-repeat"></span>
+                        </button>
+                        <ul class="dropdown-menu pull-right" aria-labelledby="taskStatusNew">
+                            <li><a href="#">Зарегистрирован</a></li>
+                            <li><a href="#">Открыт</a></li>
+                            <li><a href="#">Закрыт</a></li>
+                            <li><a href="#">Открыт снова</a></li>
+                            <li><a href="#">Исправлен</a></li>
+                            <li><a href="#">Проверен</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xs-1 text-right">
+                   <button class="btn btn-primary"><span class="glyphicon glyphicon-ok"></span></button>
+                </div>
+                <br style="clear: both"/>
+                {#<div class="col-xs-2"></div>#}
+                <div class="col-xs-3">
+                    <input type="date" class="el-inline">
+                </div>
+                <div class="col-xs-3"><small>bhdm</small></div>
+                <div class="col-xs-4"><small class="text-warning">Новая</small></div>
+            </div>
+
+
+
             {% for i in 1..10 %}
                 <div class="row task">
                     <div class="col-xs-1 text-left">
                         <span class="glyphicon glyphicon-star-empty"></span>
                     </div>
                     <div class="col-xs-9">
-                        Пример задачи с большим количество символов в Заголовоке. Этот пример что бы не косячилось
+                        <div class="task-list-title">
+                            Пример задачи с большим количество символов в Заголовоке. Этот пример что бы не косячилось
+                        </div>
                     </div>
                     <div class="col-xs-1 text-right">
                         <div class="dropdown">

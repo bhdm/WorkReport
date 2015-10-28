@@ -6,6 +6,7 @@
 
         {% block stylesheets %}
             <link rel="stylesheet" href="{{ asset('assets/vendor/bootstrap/dist/css/bootstrap.min.css') }}">
+            <link rel="stylesheet" href="{{ asset('assets/vendor/datatimepicker/jquery.datetimepicker.css') }}">
             {% stylesheets '@AppBundle/Resources/public/less/*' filter='less' %}
                 <link rel="stylesheet" href="{{ asset_url }}" />
             {% endstylesheets %}
@@ -14,6 +15,7 @@
         {% block javascripts %}
             <script src="{{ asset('assets/vendor/jquery/dist/jquery.min.js') }}"></script>
             <script src="{{ asset('assets/vendor/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+            <script src="{{ asset('assets/vendor/datatimepicker/jquery.datetimepicker.js') }}"></script>
             <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
             <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
             <!--[if lt IE 9]>
