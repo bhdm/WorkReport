@@ -56,7 +56,7 @@ class Client extends BaseEntity
     protected $owner;
 
     /**
-     * @ORM\OneToMany(targetEntity="ClientBundle\Entity\File", mappedBy="client")
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\File", mappedBy="client")
      */
     protected $files;
 

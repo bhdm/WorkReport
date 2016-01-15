@@ -7,12 +7,8 @@ use
     Gedmo\Mapping\Annotation as Gedmo;
 
 
-/**
- *
- * @ORM\Entity()
- * @ORM\Table()
- */
-class File extends BaseEntity
+
+class File
 {
     /**
      * @ORM\Column(type="string")

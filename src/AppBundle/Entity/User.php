@@ -3,36 +3,36 @@ namespace AppBundle\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use
     Doctrine\ORM\Mapping as ORM,
-    Symfony\Component\Validator\Constraints as Assert,
-    Gedmo\Mapping\Annotation as Gedmo;
+    Symfony\Component\Validator\Constraints as Assert;
+use FOS\UserBundle\Model\UserInterface;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntityValidator;
+use FOS\UserBundle\Model\User as BaseUser;
 
 
 /**
  * @ORM\Entity()
- * @ORM\Table()
+ * @ORM\Table(name="fos_user")
  * @UniqueEntity(fields={"email"}, message="Такой Email уже зарегистрирован в системе")
  */
-class User extends BaseEntity
+class User extends BaseUser implements UserInterface
 {
     /**
-     * @ORM\Column(type="string", unique=true)
-     * @Assert\NotNull(message="Поле Email обязательно для заполнения")
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
      */
-    protected $email;
+    protected $id;
 
     /**
      * @ORM\Column(type="string")
-     * @Assert\NotNull(message="Поле имя обязательно для заполнения")
      */
-    protected $title;
+    protected $lastname;
 
     /**
      * @ORM\Column(type="string")
-     * @Assert\NotNull(message="Поле пароль обязательно для заполнения")
      */
-    protected $password;
+    protected $firstname;
 
     /**
      * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Project", mappedBy="owner")
@@ -61,59 +61,12 @@ class User extends BaseEntity
 
 
     public function __construct(){
+        parent::__construct();
         $this->projects = new ArrayCollection();
         $this->myProjects = new ArrayCollection();
         $this->milestones = new ArrayCollection();
         $this->files = new ArrayCollection();
         $this->clients = new ArrayCollection();
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getEmail()
-    {
-        return $this->email;
-    }
-
-    /**
-     * @param mixed $email
-     */
-    public function setEmail($email)
-    {
-        $this->email = $email;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getTitle()
-    {
-        return $this->title;
-    }
-
-    /**
-     * @param mixed $title
-     */
-    public function setTitle($title)
-    {
-        $this->title = $title;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getPassword()
-    {
-        return $this->password;
-    }
-
-    /**
-     * @param mixed $password
-     */
-    public function setPassword($password)
-    {
-        $this->password = $password;
     }
 
     /**

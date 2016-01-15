@@ -4,7 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "17669a4f5265c7451e826d14e595f7c5",
+    "hash": "31be2ba95e999497b686cf7a4b2640b5",
+    "content-hash": "2c2eb9ced8451135aa0968c43732e169",
     "packages": [
         {
             "name": "behat/transliterator",
@@ -982,30 +983,30 @@
         },
         {
             "name": "friendsofsymfony/user-bundle",
-            "version": "dev-master",
+            "version": "v1.3.6",
+            "target-dir": "FOS/UserBundle",
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfSymfony/FOSUserBundle.git",
-                "reference": "d5b28c367d393f9d9fbc48c4138b2a74d51c0c83"
+                "reference": "2022ac8463a8c50dd631f93a17064bd41795fff2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSUserBundle/zipball/d5b28c367d393f9d9fbc48c4138b2a74d51c0c83",
-                "reference": "d5b28c367d393f9d9fbc48c4138b2a74d51c0c83",
+                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSUserBundle/zipball/2022ac8463a8c50dd631f93a17064bd41795fff2",
+                "reference": "2022ac8463a8c50dd631f93a17064bd41795fff2",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.9",
-                "symfony/form": "~2.3",
-                "symfony/framework-bundle": "~2.3",
-                "symfony/security-bundle": "~2.3",
-                "symfony/twig-bundle": "~2.3"
+                "php": ">=5.3.2",
+                "symfony/framework-bundle": "~2.1",
+                "symfony/security-bundle": "~2.1"
             },
             "require-dev": {
                 "doctrine/doctrine-bundle": "~1.3",
                 "swiftmailer/swiftmailer": "~4.3|~5",
-                "symfony/validator": "~2.3",
-                "symfony/yaml": "~2.3",
+                "symfony/validator": "~2.1",
+                "symfony/yaml": "~2.1",
+                "twig/twig": "~1.5",
                 "willdurand/propel-typehintable-behavior": "~1.0"
             },
             "suggest": {
@@ -1018,8 +1019,8 @@
                 }
             },
             "autoload": {
-                "psr-4": {
-                    "FOS\\UserBundle\\": ""
+                "psr-0": {
+                    "FOS\\UserBundle": ""
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -1045,7 +1046,7 @@
             "keywords": [
                 "User management"
             ],
-            "time": "2015-09-15 13:15:07"
+            "time": "2015-06-01 00:57:03"
         },
         {
             "name": "gedmo/doctrine-extensions",
@@ -2626,7 +2627,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/stof/StofDoctrineExtensionsBundle/zipball/7b3144572617b0555f9a443317dbc2f9cf5b524e",
+                "url": "https://api.github.com/repos/stof/StofDoctrineExtensionsBundle/zipball/6672ca37fe19a8e2a8ae52a93a7163e1b00ef7d5",
                 "reference": "7b3144572617b0555f9a443317dbc2f9cf5b524e",
                 "shasum": ""
             },
@@ -3193,7 +3194,6 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "friendsofsymfony/user-bundle": 20,
         "stof/doctrine-extensions-bundle": 20
     },
     "prefer-stable": false,

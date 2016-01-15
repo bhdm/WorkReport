@@ -10,7 +10,7 @@ use
 /**
  *
  * @ORM\Entity()
- * @ORM\Table()
+ * @ORM\Table(name="files")
  */
 class File extends BaseEntity
 {
